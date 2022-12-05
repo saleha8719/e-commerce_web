@@ -1,0 +1,129 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Form</title>
+    <link href="{% static 'css.css' %}" type="text/css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Body of Form starts -->
+    <div class="container">
+      <form action="{% url 'registration' %}" method="post" autocomplete="on">
+        {% csrf_token %}
+        <h2>Register your self here!!!</h2>
+        <!--First name-->
+        <div class="box">
+          <label for="firstName" class="fl fontLabel"> First Name: </label>
+          <div class="new iconBox">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+          <div class="fr">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              class="textBox"
+              autofocus="on"
+              required
+            />
+          </div>
+          <div class="clr"></div>
+        </div>
+        <!--First name-->
+
+        <!--Second name-->
+        <div class="box">
+          <label for="lastName" class="fl fontLabel"> Last Name: </label>
+          <div class="fl iconBox">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
+          <div class="fr">
+            <input
+              type="text"
+              required
+              name="lastName"
+              placeholder="Last Name"
+              class="textBox"
+            />
+          </div>
+          <div class="clr"></div>
+        </div>
+        <!--Last name-->
+
+        <!---Email ID---->
+        <div class="box">
+          <label for="email" class="fl fontLabel"> Email ID: </label>
+          <div class="fl iconBox">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </div>
+          <div class="fr">
+            <input
+              type="email"
+              required
+              name="email"
+              placeholder="Email Id"
+              class="textBox"
+            />
+          </div>
+          <div class="clr"></div>
+        </div>
+        <!--Email ID----->
+
+        <!---Password------>
+        <div class="box">
+          <label for="password" class="fl fontLabel"> Password </label>
+          <div class="fl iconBox">
+            <i class="fa fa-key" aria-hidden="true"></i>
+          </div>
+          <div class="fr">
+            <input
+              type="Password"
+              required
+              name="password"
+              placeholder="Password"
+              class="textBox"
+            />
+          </div>
+          <div class="clr"></div>
+        </div>
+        <!---Password---->
+
+        <!---Re-password------>
+        <div class="box">
+          <label for="cpassword" class="fl fontLabel"> Re-Password </label>
+          <div class="fl iconBox">
+            <i class="fa fa-key" aria-hidden="true"></i>
+          </div>
+          <div class="fr">
+            <input
+              type="Password"
+              required
+              name="cpassword"
+              placeholder="re-enter Password"
+              class="textBox"
+            />
+          </div>
+          <div class="clr"></div>
+        </div>
+        <!---Re-password---->
+
+        <!---Submit Button------>
+        <div class="box" style="background: #43403f">
+          <input
+            type="Submit"
+            name="Submit"
+            class="submit"
+            value="Register"
+            src="{% url 'index' %}"
+          />
+        </div>
+        <!---Submit Button----->
+      </form>
+    </div>
+    <!--Body of Form ends--->
+  </body>
+</html>
