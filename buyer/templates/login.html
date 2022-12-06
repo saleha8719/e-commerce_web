@@ -28,7 +28,9 @@
 		<h1>Login</h1>
 		 <div class="alert-close"> </div> 			
 	</div>
-		<form>
+		<form action="{% url 'login' %}" method="POST">
+			{% csrf_token %}
+			{{msg}}
 			<li>
 				<input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}"><a href="#" class=" icon user"></a>
 			</li>
